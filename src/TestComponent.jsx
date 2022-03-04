@@ -7,6 +7,8 @@ function TestComponent() {
             <h1>Test Component</h1>
         </div>
     )
+
+    // return React.createElement('div', { className: "App" }, React.createElement('h1', null, "Test Component"))
 }
 
 export default TestComponent;

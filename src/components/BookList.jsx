@@ -31,7 +31,7 @@ export class BookList extends Component {
 
                 <Book bookName={this.state.books[0].bookName} writer={this.state.books[0].writer} />
                 <Book bookName={this.state.books[1].bookName} writer={this.state.books[1].writer} />
-                <Book bookName={this.state.books[2].bookName} writer={this.state.books[2].writer} />
+                <Book bookName={this.state.books[2].bookName} writer={this.state.books[2].writer} change={this.changeBookState} />
             </div>
         )
     }

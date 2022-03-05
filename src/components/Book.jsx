@@ -3,7 +3,7 @@ import React from 'react';
 const Book = props => {
     return (
         <div>
-            <h3>Book: {props.bookName} <br /> Author: {props.writer}</h3>
+            <h3 onClick={props.change}>Book: {props.bookName} <br /> Author: {props.writer}</h3>
         </div>
     )
 }

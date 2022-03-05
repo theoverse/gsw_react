@@ -12,7 +12,6 @@ export class BookList extends Component {
     }
 
     changeBookState = () => {
-        // console.log("Clicked")
         this.setState({
             books: [
                 { bookName: "New Title 1", writer: "Author 1" },
@@ -32,6 +31,14 @@ export class BookList extends Component {
         })
     }
 
+    deleteBookState = index => {
+        const books = this.state.books;
+        books.splice(index, 1);
+        this.setState({
+            books
+        })
+    }
+
     render() {
 
         // inline css
@@ -43,15 +50,12 @@ export class BookList extends Component {
         }
 
         const bookState = this.state.books;
-        // console.log(bookState)
-        const books = bookState.map(book => {
-            // console.log(book)
-            // console.log(book.bookName)
-            // console.log(book.writer)
+        const books = bookState.map((book, index) => {
             return (
                 <Book
                     bookName={book.bookName}
                     writer={book.writer}
+                    delete={() => this.deleteBookState(index)}
                 />
             )
         })
@@ -67,14 +71,10 @@ export class BookList extends Component {
 
                 <input type="text" onChange={this.changeInput} />
 
-                {/* <Book bookName={this.state.books[0].bookName} writer={this.state.books[0].writer} />
-                <Book bookName={this.state.books[1].bookName} writer={this.state.books[1].writer} />
-                <Book bookName={this.state.books[2].bookName} writer={this.state.books[2].writer} change={this.changeBookState} /> */}
-
                 {books}
             </div>
         )
     }
 }
 
-export default BookList
+export default BookList;

@@ -11,7 +11,7 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
     <TestComponent />
-    <Person />
+    <Person name="Jason" age="25" />
     {/* pass object property data */}
     <DynamicFuncComp name="John" age="21" > Children Object Propery Value </DynamicFuncComp>
     <DynamicFuncComp name="Marco" age="23" />

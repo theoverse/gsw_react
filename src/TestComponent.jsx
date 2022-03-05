@@ -5,7 +5,7 @@ import './App.css';
 function TestComponent() {
     return (
         <div className='App'>
-            <h1>Function Based Test Component</h1>
+            {/* <h1>Function Based Test Component</h1> */}
         </div>
     )
 }

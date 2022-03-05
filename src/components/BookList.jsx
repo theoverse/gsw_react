@@ -42,6 +42,21 @@ export class BookList extends Component {
             color: "white"
         }
 
+        const bookState = this.state.books;
+        // console.log(bookState)
+        const books = bookState.map(book => {
+            // console.log(book)
+            // console.log(book.bookName)
+            // console.log(book.writer)
+            return (
+                <Book
+                    bookName={book.bookName}
+                    writer={book.writer}
+                />
+            )
+        })
+
+
         return (
             <div className="App">
                 <h1 style={style}>Book List</h1>
@@ -52,9 +67,11 @@ export class BookList extends Component {
 
                 <input type="text" onChange={this.changeInput} />
 
-                <Book bookName={this.state.books[0].bookName} writer={this.state.books[0].writer} />
+                {/* <Book bookName={this.state.books[0].bookName} writer={this.state.books[0].writer} />
                 <Book bookName={this.state.books[1].bookName} writer={this.state.books[1].writer} />
-                <Book bookName={this.state.books[2].bookName} writer={this.state.books[2].writer} change={this.changeBookState} />
+                <Book bookName={this.state.books[2].bookName} writer={this.state.books[2].writer} change={this.changeBookState} /> */}
+
+                {books}
             </div>
         )
     }

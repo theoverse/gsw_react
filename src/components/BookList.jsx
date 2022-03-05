@@ -33,11 +33,22 @@ export class BookList extends Component {
     }
 
     render() {
+
+        // inline css
+        const style = {
+            border: "1px solid red",
+            borderRadius: "5px",
+            backgroundColor: "Red",
+            color: "white"
+        }
+
         return (
             <div className="App">
-                <h1>Book List</h1>
+                <h1 style={style}>Book List</h1>
 
                 <button onClick={this.changeBookState}>Change State</button>
+
+                <br />
 
                 <input type="text" onChange={this.changeInput} />
 

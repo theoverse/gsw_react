@@ -5,9 +5,9 @@ export class BookList extends Component {
 
     state = {
         books: [
-            { bookName: "Title 1", writer: "Author 1" },
-            { bookName: "Title 2", writer: "Author 2" },
-            { bookName: "Title 3", writer: "Author 3" },
+            { id: 1, bookName: "Title 1", writer: "Author 1" },
+            { id: 2, bookName: "Title 2", writer: "Author 2" },
+            { id: 3, bookName: "Title 3", writer: "Author 3" },
         ]
     }
 
@@ -56,6 +56,7 @@ export class BookList extends Component {
                     bookName={book.bookName}
                     writer={book.writer}
                     delete={() => this.deleteBookState(index)}
+                    key={book.id}
                 />
             )
         })

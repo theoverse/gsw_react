@@ -8,7 +8,8 @@ export class BookList extends Component {
             { id: 1, bookName: "Title 1", writer: "Author 1" },
             { id: 2, bookName: "Title 2", writer: "Author 2" },
             { id: 3, bookName: "Title 3", writer: "Author 3" },
-        ]
+        ],
+        showBooks: true
     }
 
     changeBookState = () => {
@@ -40,6 +41,10 @@ export class BookList extends Component {
         })
     }
 
+    toggleBooks = () => {
+        this.setState({ showBooks: !this.state.showBooks })
+    }
+
     render() {
 
         // inline css
@@ -67,8 +72,8 @@ export class BookList extends Component {
         return (
             <div className="App">
                 <h1 style={style}>Book List</h1>
-                {/* <button onClick={this.changeBookState}>Change State</button> */}
-                {books}
+                <button onClick={this.toggleBooks}>Toggle Books</button>
+                {this.state.showBooks ? books : null}
             </div>
         )
     }

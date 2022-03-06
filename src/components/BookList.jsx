@@ -21,14 +21,15 @@ export class BookList extends Component {
         })
     }
 
-    changeInput = e => {
-        this.setState({
-            books: [
-                { bookName: e.target.value, writer: "Author 1" },
-                { bookName: "New Title 2", writer: "Author 2" },
-                { bookName: "New Title 3", writer: "Author 3" },
-            ]
-        })
+    changeInput = (e, index) => {
+        const book = {
+            ...this.state.books[index]
+        }
+        book.bookName = e.target.value;
+        const books = [...this.state.books];
+        books[index] = book;
+
+        this.setState({ books: books });
     }
 
     deleteBookState = index => {
@@ -57,6 +58,7 @@ export class BookList extends Component {
                     writer={book.writer}
                     delete={() => this.deleteBookState(index)}
                     key={book.id}
+                    inputName={e => this.changeInput(e, index)}
                 />
             )
         })
@@ -65,13 +67,7 @@ export class BookList extends Component {
         return (
             <div className="App">
                 <h1 style={style}>Book List</h1>
-
-                <button onClick={this.changeBookState}>Change State</button>
-
-                <br />
-
-                <input type="text" onChange={this.changeInput} />
-
+                {/* <button onClick={this.changeBookState}>Change State</button> */}
                 {books}
             </div>
         )
